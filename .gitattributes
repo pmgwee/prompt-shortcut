@@ -1,0 +1,10 @@
+# Normalize text files to LF in the repo (agents read these raw via GitHub URLs,
+# so consistent line endings matter). Checked out with local EOL on each OS.
+* text=auto eol=lf
+
+# Treat images as binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary

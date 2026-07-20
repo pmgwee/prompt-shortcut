@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+target/
+*.swp
+.idea/
+.vscode/
+
+# Claude Code local state (never ship these)
+.claude/settings.local.json
+**/prompt-shortcut-workspace/
+
+# Node / tooling (if you add any later)
+node_modules/

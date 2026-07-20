@@ -1,0 +1,8 @@
+{
+  "name": "prompt-shortcut",
+  "description": "Personal prompt launcher. /prompt-shortcut opens a clickable menu of your favorite prompts; /continue, /summarize, /package jump straight to each. Add a prompt by dropping one file in prompts/.",
+  "version": "1.0.0",
+  "author": "pmgwee",
+  "homepage": "https://github.com/pmgwee/prompt-shortcut",
+  "repository": "https://github.com/pmgwee/prompt-shortcut"
+}

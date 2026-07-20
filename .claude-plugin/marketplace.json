@@ -1,0 +1,15 @@
+{
+  "name": "prompt-shortcut",
+  "owner": {
+    "name": "pmgwee",
+    "url": "https://github.com/pmgwee"
+  },
+  "plugins": [
+    {
+      "name": "prompt-shortcut",
+      "source": "./",
+      "description": "Personal prompt launcher — /prompt-shortcut opens a menu of your favorite prompts.",
+      "version": "1.0.0"
+    }
+  ]
+}
