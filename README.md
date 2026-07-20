@@ -58,7 +58,8 @@ Start a new session and run `/prompt-shortcut` to confirm.
 
 ## Usage
 
-- `/prompt-shortcut` → opens the menu. Pick a prompt; it runs now.
+- `/prompt-shortcut` → opens the menu (your prompts **+ an ➕ Add a new prompt
+  option**). Pick one; it runs now.
 - `/prompt-shortcut <name>` → run a specific prompt without the menu
   (e.g. `/prompt-shortcut conclusion`).
 - `/continue`, `/conclusion`, `/packaging` → one-tap shortcuts for the built-ins.

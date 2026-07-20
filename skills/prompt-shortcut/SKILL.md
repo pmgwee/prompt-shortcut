@@ -54,26 +54,35 @@ Use **Glob** with path `${CLAUDE_SKILL_DIR}` and pattern `prompts/*.md`. Then
 
 ### Step 3 — present the menu (adapt to the count)
 
+The menu always includes one permanent entry on top of the prompts:
+**"➕ Add a new prompt"** — picking it launches the wizard in the *Adding a new
+prompt* section. So the total number of options is (number of prompts) + 1.
+
 AskUserQuestion shows at most four clickable options, so adapt:
 
-- **4 or fewer prompts** → call **AskUserQuestion** once, single-select, with one
-  option per prompt: `label` = the `title`, `description` = the prompt's
-  `description`. (AskUserQuestion automatically adds an "Other" choice, so the
-  user can also type a custom request or a prompt name that is not shown.)
+- **Total ≤ 4 (3 prompts or fewer, plus Add)** → call **AskUserQuestion** once,
+  single-select: one option per prompt (`label` = the `title`, `description` =
+  the prompt's `description`), then a final option `label` = "➕ Add a new prompt",
+  `description` = "Save a new favorite prompt into the menu."
 
-- **More than 4 prompts** → buttons can't hold them all, so print a numbered list
-  instead and let the user reply with a number or name:
+- **Total > 4 (4 prompts or more)** → buttons can't hold them all, so print a
+  numbered list and let the user reply with a number, a name, or `add`:
 
   ```
-  Pick a prompt — reply with a number or name:
+  Pick a prompt — reply with a number, name, or "add":
     1. <title> — <description>
     2. <title> — <description>
     ...
+    add  ➕ Add a new prompt
   ```
 
-  Then wait for the reply and map it back to the file.
+If the user picks **Add a new prompt** (or replies `add`), go to the **Adding a
+new prompt** section — do not try to run a prompt body.
 
 ### Step 4 — execute the chosen prompt
+
+(Only for a real prompt the user picked — the "Add a new prompt" choice is
+handled in its own section, so you should already have branched away there.)
 
 Read the selected file's **body** — everything below the closing `---` of the
 frontmatter — and treat it as the user's request for this turn. Carry it out
