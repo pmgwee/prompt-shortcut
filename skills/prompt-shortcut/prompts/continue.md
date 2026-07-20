@@ -1,5 +1,5 @@
 ---
-title: Continue working
+title: Continue
 description: Keep executing remaining tasks in this session until everything is done.
 shortcut: continue
 ---

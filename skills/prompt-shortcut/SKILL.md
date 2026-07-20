@@ -1,6 +1,6 @@
 ---
 name: prompt-shortcut
-description: Personal prompt launcher. Use when the user runs /prompt-shortcut (or asks for "my prompts", "favorite prompts", or a prompt menu) to list their saved prompts as a clickable menu and run the chosen one in the current session. Also used by the shortcut commands /continue, /summarize, /package, and by /prompt-shortcut <name> to run a specific prompt directly without the menu.
+description: Personal prompt launcher. Use when the user runs /prompt-shortcut (or asks for "my prompts", "favorite prompts", or a prompt menu) to list their saved prompts as a clickable menu and run the chosen one in the current session. Also used by the shortcut commands /continue, /conclusion, /packaging, and by /prompt-shortcut <name> to run a specific prompt directly without the menu.
 ---
 
 # Prompt Shortcut

@@ -1,7 +1,7 @@
 ---
-title: Summarize outcomes
+title: Conclusion
 description: Short highlighted wrap-up — what you did, features added, and the setup steps.
-shortcut: summarize
+shortcut: conclusion
 ---
 
 Give me a tight, highlighted conclusion of the work done in this session. Keep it short and scannable — bullets, no filler. Cover exactly these three sections:

@@ -1,7 +1,7 @@
 ---
-title: Package / install a skill
+title: Packaging
 description: Package a skill for distribution and install it (install-by-URL, manual copy, or marketplace).
-shortcut: package
+shortcut: packaging
 ---
 
 Help me package and install a Claude Code skill or plugin. If it is not obvious, first ask which skill or repo we are packaging and where its files live.

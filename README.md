@@ -2,7 +2,7 @@
 
 A personal **prompt launcher** for Claude Code. Type `/prompt-shortcut` and a
 clickable menu of your favorite prompts pops up — pick one and it runs in the
-current session. Distinct shortcuts (`/continue`, `/summarize`, `/package`) jump
+current session. Distinct shortcuts (`/continue`, `/conclusion`, `/packaging`) jump
 straight to each prompt.
 
 Designed to **scale**: every prompt is one file in `prompts/`. Drop a file in,
@@ -60,8 +60,8 @@ Start a new session and run `/prompt-shortcut` to confirm.
 
 - `/prompt-shortcut` → opens the menu. Pick a prompt; it runs now.
 - `/prompt-shortcut <name>` → run a specific prompt without the menu
-  (e.g. `/prompt-shortcut summarize`).
-- `/continue`, `/summarize`, `/package` → one-tap shortcuts for the built-ins.
+  (e.g. `/prompt-shortcut conclusion`).
+- `/continue`, `/conclusion`, `/packaging` → one-tap shortcuts for the built-ins.
 
 The menu shows **buttons when there are 4 prompts or fewer**, and switches to a
 **numbered list** as your library grows (AskUserQuestion caps at 4 buttons).
@@ -72,9 +72,9 @@ The menu shows **buttons when there are 4 prompts or fewer**, and switches to a
 
 | Shortcut | Title | What it does |
 |----------|-------|--------------|
-| `/continue` | Continue working | Finish all remaining tasks in the session without stopping between steps. |
-| `/summarize` | Summarize outcomes | Bulleted wrap-up: Execution / Features / Setup steps. |
-| `/package` | Package / install a skill | Package & install a skill via install-by-URL, manual copy, or marketplace. |
+| `/continue` | Continue | Finish all remaining tasks in the session without stopping between steps. |
+| `/conclusion` | Conclusion | Bulleted wrap-up: Execution / Features / Setup steps. |
+| `/packaging` | Packaging | Package & install a skill via install-by-URL, manual copy, or marketplace. |
 
 ---
 
@@ -117,12 +117,12 @@ prompt-shortcut/
 │   └── prompts/            ← drop files here to add prompts
 │       ├── _TEMPLATE.md
 │       ├── continue.md
-│       ├── summarize.md
-│       └── package.md
-├── commands/               ← /continue  /summarize  /package
+│       ├── conclusion.md
+│       └── packaging.md
+├── commands/               ← /continue  /conclusion  /packaging
 │   ├── continue.md
-│   ├── summarize.md
-│   └── package.md
+│   ├── conclusion.md
+│   └── packaging.md
 ├── docs/install.md
 └── README.md
 ```

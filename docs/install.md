@@ -5,8 +5,8 @@
 > steps. Ask before doing anything destructive, and report real command output.
 
 `prompt-shortcut` is a personal prompt launcher: `/prompt-shortcut` opens a
-clickable menu of the user's favorite prompts, and `/continue`, `/summarize`,
-`/package` jump straight to each.
+clickable menu of the user's favorite prompts, and `/continue`, `/conclusion`,
+`/packaging` jump straight to each.
 
 Repo: https://github.com/pmgwee/prompt-shortcut
 
@@ -71,11 +71,10 @@ For project scope, replace `~/.claude/` (or `$env:USERPROFILE\.claude\`) with
 ## Step 5 — verify
 
 - Confirm the files exist: `~/.claude/skills/prompt-shortcut/SKILL.md` and three
-  files under `~/.claude/commands/` (`continue.md`, `summarize.md`, `package.md`).
+  files under `~/.claude/commands/` (`continue.md`, `conclusion.md`, `packaging.md`).
 - Tell the user to start a new Claude Code session (or run `/reload` if their
-  client supports it) and type `/prompt-shortcut` — a menu with **Continue
-  working**, **Summarize outcomes**, and **Package / install a skill** should
-  appear.
+  client supports it) and type `/prompt-shortcut` — a menu with **Continue**,
+  **Conclusion**, and **Packaging** should appear.
 
 ## Step 6 — report
 
