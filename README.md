@@ -62,6 +62,8 @@ Start a new session and run `/prompt-shortcut` to confirm.
 - `/prompt-shortcut <name>` → run a specific prompt without the menu
   (e.g. `/prompt-shortcut conclusion`).
 - `/continue`, `/conclusion`, `/packaging` → one-tap shortcuts for the built-ins.
+- `/add-prompt` → interactively add a new favorite prompt (asks for name,
+  description, body); it saves the file and the prompt auto-appears in the menu.
 
 The menu shows **buttons when there are 4 prompts or fewer**, and switches to a
 **numbered list** as your library grows (AskUserQuestion caps at 4 buttons).
@@ -79,6 +81,11 @@ The menu shows **buttons when there are 4 prompts or fewer**, and switches to a
 ---
 
 ## Add a new prompt
+
+**Easiest:** run `/add-prompt` — it asks for the name, description, and body, then
+writes the file for you. The prompt appears in `/prompt-shortcut` immediately.
+
+**Manual:**
 
 1. Copy [`skills/prompt-shortcut/prompts/_TEMPLATE.md`](skills/prompt-shortcut/prompts/_TEMPLATE.md)
    → `prompts/<your-name>.md`.
@@ -119,10 +126,11 @@ prompt-shortcut/
 │       ├── continue.md
 │       ├── conclusion.md
 │       └── packaging.md
-├── commands/               ← /continue  /conclusion  /packaging
+├── commands/               ← /continue  /conclusion  /packaging  /add-prompt
 │   ├── continue.md
 │   ├── conclusion.md
-│   └── packaging.md
+│   ├── packaging.md
+│   └── add-prompt.md
 ├── docs/install.md
 └── README.md
 ```

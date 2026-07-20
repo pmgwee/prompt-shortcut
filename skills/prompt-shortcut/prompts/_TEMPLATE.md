@@ -11,6 +11,8 @@ the agent — it becomes the user's request for that turn.>
 
 ## To add this prompt
 
+> Tip: run `/add-prompt` to do all of this interactively — it writes the file for you.
+
 1. Copy this file to `prompts/<name>.md` (name = the filename you want; the
    `shortcut` field can be shorter).
 2. Fill in `title`, `description`, and optional `shortcut`.

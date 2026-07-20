@@ -1,6 +1,6 @@
 ---
 name: prompt-shortcut
-description: Personal prompt launcher. Use when the user runs /prompt-shortcut (or asks for "my prompts", "favorite prompts", or a prompt menu) to list their saved prompts as a clickable menu and run the chosen one in the current session. Also used by the shortcut commands /continue, /conclusion, /packaging, and by /prompt-shortcut <name> to run a specific prompt directly without the menu.
+description: Personal prompt launcher. Use when the user runs /prompt-shortcut (or asks for "my prompts", "favorite prompts", or a prompt menu) to list their saved prompts as a clickable menu and run the chosen one in the current session. Also used by the shortcut commands /continue, /conclusion, /packaging, and /add-prompt (which interactively saves a new prompt into the menu), and by /prompt-shortcut <name> to run a specific prompt directly without the menu.
 ---
 
 # Prompt Shortcut
@@ -44,6 +44,8 @@ If so: match the requested name to a prompt file by **filename without `.md`**
 **Step 4** with that file — do **not** show the menu. If the name matches
 nothing, briefly list what is available (titles) and stop.
 
+**Special case — adding a prompt:** if this was invoked via `/add-prompt`, or `$ARGUMENTS` is `add`, or the user asked to *save/add* a new favorite prompt, do not show the menu — go to the **Adding a new prompt** section instead.
+
 ### Step 2 — enumerate the prompts
 
 Use **Glob** with path `${CLAUDE_SKILL_DIR}` and pattern `prompts/*.md`. Then
@@ -80,6 +82,65 @@ directly in this session.
 Do not summarize or restate the prompt before acting, and do not ask "should I
 proceed?" unless the prompt body itself calls for confirmation. The body is
 authoritative; run it as written.
+
+## Adding a new prompt (`/add-prompt`)
+
+This skill is meant to grow. `/add-prompt` (or an explicit request to save/add a
+new favorite prompt) runs this wizard: collect the details, then write the file
+into `prompts/` so it shows up in the menu automatically — no manual editing.
+
+### Step A — collect the details
+
+If `$ARGUMENTS` already holds the name (e.g. `/add-prompt refactor`), use it.
+Otherwise ask the user, in one short message, for whatever is missing:
+
+- **name** — the filename and the `/<name>` shortcut. Lowercase, hyphenated, no
+  spaces (e.g. `refactor`, `write-tests`).
+- **title** — short menu label (e.g. `Refactor code`). If omitted, derive it from
+  the name.
+- **description** — one line shown under the title in the menu.
+- **body** — the prompt text to reuse. Accept a paste; you may tidy formatting
+  but keep the user's intent and wording.
+
+Then ask the one structured choice via **AskUserQuestion** (single-select):
+
+- "Also create a direct `/<name>` shortcut?" → options: **Yes (recommended)**,
+  **No, menu only**.
+
+### Step B — validate
+
+- Glob `${CLAUDE_SKILL_DIR}/prompts/*.md`. If `<name>.md` already exists, tell
+  the user and ask for a different name (or cancel).
+- Normalize the name to lowercase with hyphens.
+
+### Step C — write the prompt file
+
+Write `${CLAUDE_SKILL_DIR}/prompts/<name>.md` with this shape:
+
+```
+---
+title: <title>
+description: <description>
+shortcut: <name>
+---
+
+<body>
+```
+
+### Step D — (optional) write the direct-shortcut command
+
+If the user chose Yes: find the `commands/` directory that already holds the
+prompt-shortcut shortcuts — try `${CLAUDE_SKILL_DIR}/../../commands/` first; if
+that path does not exist, use `~/.claude/commands/`. Copy the one-line format of
+the existing `continue.md` (it tells this skill to run the `<name>` prompt
+directly) and save it as `<name>.md` there.
+
+### Step E — confirm
+
+Tell the user the prompt is saved and will appear next time they run
+`/prompt-shortcut` (also `/prompt-shortcut <name>`, and `/<name>` if a shortcut
+was created). If the skill lives in a git repo (for example the cwd is the
+`prompt-shortcut` project), offer to commit and push the new file.
 
 ## Notes
 

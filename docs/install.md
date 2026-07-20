@@ -70,8 +70,8 @@ For project scope, replace `~/.claude/` (or `$env:USERPROFILE\.claude\`) with
 
 ## Step 5 — verify
 
-- Confirm the files exist: `~/.claude/skills/prompt-shortcut/SKILL.md` and three
-  files under `~/.claude/commands/` (`continue.md`, `conclusion.md`, `packaging.md`).
+- Confirm the files exist: `~/.claude/skills/prompt-shortcut/SKILL.md` and four
+  files under `~/.claude/commands/` (`continue.md`, `conclusion.md`, `packaging.md`, `add-prompt.md`).
 - Tell the user to start a new Claude Code session (or run `/reload` if their
   client supports it) and type `/prompt-shortcut` — a menu with **Continue**,
   **Conclusion**, and **Packaging** should appear.
