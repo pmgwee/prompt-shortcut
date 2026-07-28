@@ -1,7 +1,7 @@
 ---
-title: Load full project context
-description: Read every file in the current repo (not just grep/glob hits), then sync its README so you hold the full picture for my next request.
-shortcut: load-project
+title: Study & update project
+description: Read every file in the repo to learn it fully, then sync its README so you hold the full picture for the next request.
+shortcut: study-update-project
 ---
 
 Read the ENTIRE codebase of the current project — every source, config, and doc file, not just the files a grep/glob or keyword search happens to hit — so you build a complete and accurate model of the project before doing anything else.
